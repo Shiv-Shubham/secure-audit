@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Audit Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="title">
+        Secure Audit Platform
+    </h1>
+
+    <p class="subtitle">
+        Upload a project ZIP to scan for
+        security vulnerabilities and secrets.
+    </p>
+
+    <div class="upload-card">
+
+        <input type="file"
+               id="zipFile"
+               accept=".zip">
+
+        <button id="scanButton">
+            Start Scan
+        </button>
+
+    </div>
+
+    <div id="loading"
+         class="loading hidden">
+
+        Scanning project...
+
+    </div>
+
+    <div id="results"
+         class="hidden">
+
+        <div class="summary">
+
+            <div class="card">
+                <h3>Critical</h3>
+                <p id="criticalCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>High</h3>
+                <p id="highCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Medium</h3>
+                <p id="mediumCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Low</h3>
+                <p id="lowCount">0</p>
+            </div>
+
+        </div>
+        <div class="actions hidden"
+             id="reportSection">
+
+            <a id="reportLink"
+               target="_blank">
+
+                <button>
+                    Open Report
+                </button>
+
+            </a>
+
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>Scanner</th>
+                    <th>Severity</th>
+                    <th>Type</th>
+                    <th>File</th>
+                    <th>Line</th>
+                </tr>
+
+                </thead>
+
+                <tbody id="findingsTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
